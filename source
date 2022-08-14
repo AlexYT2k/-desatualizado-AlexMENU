@@ -1,0 +1,22 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Alexandre MENU", "Sentinel")
+
+local Alex = Window:NewTab("Alex")
+local AlexSection = Alex:NewSection("Alex")
+AlexSection:NewSlider("Velocidade", "Aumenta a velocidade do player", 500, 0, function(v) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+AlexSection:NewSlider("Altura do Salto", "Aumenta a altura do salto do player", 500, 0, function(v) 
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+AlexSection:NewDropdown("(PRISION)Dar Armas", "Da armas ao player (prisin life)", {"M9", "Remington 870", "AK-47"}, function(V)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+end)
+
+local Troll = Window:NewTab("Troll")
+local TrollSection = Troll:NewSection("Troll")
